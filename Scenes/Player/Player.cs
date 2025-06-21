@@ -20,6 +20,7 @@ public partial class Player : CharacterBody2D
 			{
 				_coin = value;
 				GD.Print($"Coin count : {_coin}");
+				_gameEvents.EmitSignal(GameEvents.SignalName.CoinCounterChanged, _coin);
 				if (_coin == 0)
 				{
 					// Do something
@@ -31,12 +32,14 @@ public partial class Player : CharacterBody2D
 	#endregion
 
 	#region FIELD
+	private bool _isWon = false;
 	#endregion
 
 	#region SIGNALS
 	#endregion
 
 	#region ONREADY
+	private GameEvents _gameEvents;
 
 	#endregion
 
@@ -52,16 +55,18 @@ public partial class Player : CharacterBody2D
 		try
 		{
 			// On ready
+			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
 
 			// Signal connections
 			// Engine (automatically freed)
 
 			// Customs (need to be freed manually)
 			// Local and external emitter (freed in _ExitTree())
-
+			_gameEvents.YouWin += OnYouWin;
 			// Children emitter (automatically freed))
 
 			// Logic
+			_gameEvents.EmitSignal(GameEvents.SignalName.CoinCounterChanged, Coin);
 		}
 		catch (Exception e)
 		{
@@ -77,7 +82,7 @@ public partial class Player : CharacterBody2D
 			// Call parent _ExitTree()
 			base._ExitTree();
 			// Custom local and external signals freeing
-
+			_gameEvents.YouWin -= OnYouWin;
 		}
 		catch (Exception e)
 		{
@@ -93,7 +98,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (Coin == 0)
+		if (Coin == 0 || _isWon)
 		{
 			return; // Skip move input
 		}
@@ -119,7 +124,7 @@ public partial class Player : CharacterBody2D
 	#endregion
 
 	#region ON_SIGNALS
-
+	private void OnYouWin() => _isWon = true;
 	#endregion
 
 	#region LOGIC
