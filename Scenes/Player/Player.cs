@@ -74,15 +74,22 @@ public partial class Player : CharacterBody2D
 
 	public override void _Input(InputEvent @event)
 	{
+		Vector2 TargetPosition = Vector2.Inf;
 		if (@event.IsActionPressed("up"))
-			Position = new Vector2(Position.X, Position.Y - 500);
+			TargetPosition = new Vector2(Position.X, Position.Y - 500);
 		else if (@event.IsActionPressed("right"))
-			Position = new Vector2(Position.X + 500, Position.Y);
+			TargetPosition = new Vector2(Position.X + 500, Position.Y);
 		else if (@event.IsActionPressed("down"))
-			Position = new Vector2(Position.X, Position.Y + 500);
+			TargetPosition = new Vector2(Position.X, Position.Y + 500);
 		else if (@event.IsActionPressed("left"))
-			Position = new Vector2(Position.X - 500, Position.Y);
+			TargetPosition = new Vector2(Position.X - 500, Position.Y);
 
+		if (TargetPosition != Vector2.Inf)
+		{
+			Vector2 direction = Position.DirectionTo(TargetPosition);
+			float distance = Position.DistanceTo(TargetPosition);
+			MoveAndCollide(direction * distance);
+		}
 	}
 
 	#endregion
