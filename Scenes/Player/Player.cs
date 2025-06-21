@@ -9,6 +9,25 @@ public partial class Player : CharacterBody2D
 	#region PROPERTIES
 
 	#region EXPORTS
+	[Export]
+	private int _coin = 1;
+	public int Coin
+	{
+		get { return _coin; }
+		set
+		{
+			if (_coin != value)
+			{
+				_coin = value;
+				GD.Print($"Coin count : {_coin}");
+				if (_coin == 0)
+				{
+					// Do something
+				}
+			}
+		}
+	}
+
 	#endregion
 
 	#region FIELD
@@ -74,6 +93,10 @@ public partial class Player : CharacterBody2D
 
 	public override void _Input(InputEvent @event)
 	{
+		if (Coin == 0)
+		{
+			return; // Skip move input
+		}
 		Vector2 TargetPosition = Vector2.Inf;
 		if (@event.IsActionPressed("up"))
 			TargetPosition = new Vector2(Position.X, Position.Y - 500);
@@ -89,6 +112,7 @@ public partial class Player : CharacterBody2D
 			Vector2 direction = Position.DirectionTo(TargetPosition);
 			float distance = Position.DistanceTo(TargetPosition);
 			MoveAndCollide(direction * distance);
+			Coin -= 1;
 		}
 	}
 
