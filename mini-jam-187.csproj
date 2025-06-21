@@ -1,0 +1,11 @@
+<Project Sdk="Godot.NET.Sdk/4.4.1">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>minijam187</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Templates/Node/Template.cs" />
+    <Compile Remove="Templates/State/Template.cs" />
+  </ItemGroup>
+</Project>
