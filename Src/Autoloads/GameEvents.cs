@@ -8,6 +8,8 @@ public partial class GameEvents : Node
 	[Signal]
 	public delegate void CoinCounterChangedEventHandler(int count);
 	[Signal]
+	public delegate void PlayCoinSoundEventHandler();
+	[Signal]
 	public delegate void OpenChestEventHandler();
 	[Signal]
 	public delegate void YouWinEventHandler();
@@ -15,5 +17,6 @@ public partial class GameEvents : Node
 	public delegate void YouLooseEventHandler();
 	#endregion
 	#endregion
+
 
 }

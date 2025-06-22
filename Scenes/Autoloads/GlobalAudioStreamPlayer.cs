@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Coin : Node2D
+public partial class GlobalAudioStreamPlayer : AudioStreamPlayer
 {
 	#region CONSTANTS
 	#endregion
@@ -9,8 +9,6 @@ public partial class Coin : Node2D
 	#region PROPERTIES
 
 	#region EXPORTS
-	[Export]
-	public int Value = 1;
 	#endregion
 
 	#region FIELDS
@@ -20,10 +18,8 @@ public partial class Coin : Node2D
 	#endregion
 
 	#region ONREADY
-	private Area2D _area2D;
-	private AnimatedSprite2D _animatedSprite2D;
 	private GameEvents _gameEvents;
-
+	private AudioStreamPlayer _coinAudioStreamPlayer;
 	#endregion
 
 	#endregion
@@ -38,23 +34,22 @@ public partial class Coin : Node2D
 		try
 		{
 			// On ready
-			_area2D = GetNode<Area2D>("Area2D");
-			_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
+			_coinAudioStreamPlayer = GetNode<AudioStreamPlayer>("CoinAudioStreamPlayer");
 			// Signal connections
 			// Engine (automatically freed)
 
 			// Customs (need to be freed manually)
 			// Local and external emitter (freed in _ExitTree())
-
+			_gameEvents.PlayCoinSound += OnPlayCoinSound;
 			// Children emitter (automatically freed))
-			_area2D.BodyEntered += OnArea2DBodyEntered;
+
 			// Logic
-			_animatedSprite2D.Play("idle");
+			Play();
 		}
 		catch (Exception e)
 		{
-			GD.PushError($"Error while loading Coin : ", e);
+			GD.PushError($"Error while loading GlobalAudioStreamPlayer : ", e);
 		}
 	}
 
@@ -66,11 +61,11 @@ public partial class Coin : Node2D
 			// Call parent _ExitTree()
 			base._ExitTree();
 			// Custom local and external signals freeing
-
+			_gameEvents.PlayCoinSound -= OnPlayCoinSound;
 		}
-		catch (Exception e)
+		catch(Exception e)
 		{
-			GD.PushError($"Error while unloading Coin : ", e);
+			GD.PushError($"Error while unloading GlobalAudioStreamPlayer : ", e);
 		}
 	}
 
@@ -83,17 +78,7 @@ public partial class Coin : Node2D
 	#endregion
 
 	#region ON_SIGNALS
-	private void OnArea2DBodyEntered(Node2D body)
-	{
-
-		if (body is Player player)
-		{
-			//_area2D.Monitoring = false;
-			player.Coin += Value;
-			_gameEvents.EmitSignal(GameEvents.SignalName.PlayCoinSound);
-			QueueFree();
-		}
-	}
+	private void OnPlayCoinSound() => _coinAudioStreamPlayer.Play();
 	#endregion
 
 	#region LOGIC

@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://djpojq481yjb6"]
+[gd_scene load_steps=15 format=3 uid="uid://djpojq481yjb6"]
 
 [ext_resource type="Script" uid="uid://ev0wom64vcaj" path="res://Scenes/Player/Player.cs" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://v8pbihrtm7wg" path="res://Assets/Sprites/Spreadsheet_minijam.png" id="2_a3d8c"]
+[ext_resource type="AudioStream" uid="uid://bblsypcar2wxi" path="res://Assets/Sound/FX/step.mp3" id="3_xpcdj"]
+[ext_resource type="AudioStream" uid="uid://cgdbny8vnufhq" path="res://Assets/Sound/FX/error.mp3" id="4_mtuoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpcdj"]
 atlas = ExtResource("2_a3d8c")
@@ -89,3 +91,11 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(250, 250)
 shape = SubResource("RectangleShape2D_mtuoh")
+
+[node name="StepAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xpcdj")
+volume_db = 17.0
+
+[node name="ErrorAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mtuoh")
+volume_db = 9.57

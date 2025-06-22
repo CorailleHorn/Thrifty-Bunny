@@ -1,20 +1,16 @@
-[gd_scene load_steps=37 format=4 uid="uid://donnmswsmh1x3"]
+[gd_scene load_steps=33 format=4 uid="uid://5wanw667o5e"]
 
-[ext_resource type="Texture2D" uid="uid://v8pbihrtm7wg" path="res://Assets/Sprites/Spreadsheet_minijam.png" id="1_81drk"]
-[ext_resource type="Script" uid="uid://blsrs4njuics" path="res://Scenes/GlobalHUD.cs" id="2_npi0p"]
-[ext_resource type="PackedScene" uid="uid://q7k41ymhxuo3" path="res://Scenes/Level/level3.tscn" id="3_81drk"]
-[ext_resource type="Texture2D" uid="uid://ci4jlai31nefh" path="res://Assets/UI/coin_counter.png" id="3_c1bph"]
-[ext_resource type="FontFile" uid="uid://bd1egfqdso73" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_f3x5n"]
-[ext_resource type="Texture2D" uid="uid://canbu35eg51rm" path="res://Assets/UI/bg.png" id="5_oqvmb"]
-[ext_resource type="Texture2D" uid="uid://c76yhadai0jul" path="res://Assets/UI/button.png" id="6_yq1sg"]
-[ext_resource type="PackedScene" uid="uid://djpojq481yjb6" path="res://Scenes/Player/player.tscn" id="7_3wepa"]
-[ext_resource type="PackedScene" uid="uid://b1jwlhuwgvjkj" path="res://Scenes/Coin/coin_2.tscn" id="9_dto56"]
-[ext_resource type="PackedScene" uid="uid://dusfnq0o81te6" path="res://Scenes/Coin/coin_4.tscn" id="9_emhs1"]
-[ext_resource type="PackedScene" uid="uid://chlwk42tjaox" path="res://Scenes/Chest/chest.tscn" id="10_ggbp6"]
-[ext_resource type="PackedScene" uid="uid://bxlynsg1n637c" path="res://Scenes/Coin/coin_3.tscn" id="11_f5ai4"]
+[ext_resource type="Texture2D" uid="uid://v8pbihrtm7wg" path="res://Assets/Sprites/Spreadsheet_minijam.png" id="1_bhcw7"]
+[ext_resource type="Script" uid="uid://blsrs4njuics" path="res://Scenes/GlobalHUD.cs" id="2_x4qwa"]
+[ext_resource type="Texture2D" uid="uid://ci4jlai31nefh" path="res://Assets/UI/coin_counter.png" id="3_hgqo4"]
+[ext_resource type="FontFile" uid="uid://bd1egfqdso73" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="4_vyxhw"]
+[ext_resource type="Texture2D" uid="uid://canbu35eg51rm" path="res://Assets/UI/bg.png" id="5_txb6k"]
+[ext_resource type="Texture2D" uid="uid://c76yhadai0jul" path="res://Assets/UI/button.png" id="6_5j8p4"]
+[ext_resource type="PackedScene" uid="uid://djpojq481yjb6" path="res://Scenes/Player/player.tscn" id="7_tx6e3"]
+[ext_resource type="PackedScene" uid="uid://chlwk42tjaox" path="res://Scenes/Chest/chest.tscn" id="8_skkf5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_emhs1"]
-texture = ExtResource("1_81drk")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhcw7"]
+texture = ExtResource("1_bhcw7")
 texture_region_size = Vector2i(500, 500)
 0:0/0 = 0
 1:0/0 = 0
@@ -90,10 +86,10 @@ texture_region_size = Vector2i(500, 500)
 29:0/0 = 0
 29:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-250, -250, 250, -250, 250, 250, -250, 250)
 
-[sub_resource type="TileSet" id="TileSet_jjgbg"]
+[sub_resource type="TileSet" id="TileSet_x4qwa"]
 tile_size = Vector2i(500, 500)
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_emhs1")
+sources/3 = SubResource("TileSetAtlasSource_bhcw7")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkdf5"]
 
@@ -117,33 +113,33 @@ sources/3 = SubResource("TileSetAtlasSource_emhs1")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fdnlq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emhs1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhcw7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81drk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4qwa"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npi0p"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgqo4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1bph"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vyxhw"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3x5n"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txb6k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqvmb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5j8p4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq1sg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tx6e3"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3wepa"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skkf5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv3dn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ni3kn"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dto56"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imhnd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggbp6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_culxr"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level0" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAAAAwAdAAAAAAABAAAAAwAeAAAAAAACAAYAAwAEAAAAAAADAAcAAwAEAAAAAAAEAAcAAwAEAAAAAAAFAAgAAwAeAAIAAAAGAAgAAwAeAAIAAAAMAAgAAwAeAAIAAAANAAgAAwAeAAIAAAANAAcAAwAEAAAAAAAOAAcAAwAEAAAAAAAOAAYAAwAEAAAAAAAGAAMAAwAAAAAAAAAJAAMAAwABAAAAAAACAAAAAwAeAAAAAAADAAAAAwAeAAAAAAAEAAAAAwAeAAAAAAAFAAAAAwAeAAAAAAAGAAAAAwAeAAAAAAAHAAAAAwAeAAAAAAAIAAAAAwAeAAAAAAAJAAAAAwAeAAAAAAAKAAAAAwAeAAAAAAALAAAAAwAeAAAAAAAMAAAAAwAeAAAAAAANAAAAAwAeAAAAAAAOAAAAAwAeAAAAAAAPAAAAAwAfAAAAAAAPAAEAAwAfAAEAAAAPAAIAAwAfAAEAAAAPAAMAAwAfAAEAAAAPAAQAAwAfAAEAAAAPAAUAAwAfAAEAAAAPAAYAAwAfAAEAAAAPAAcAAwAfAAEAAAAOAAgAAwAeAAIAAAALAAgAAwAeAAIAAAAKAAgAAwAeAAIAAAAJAAgAAwAeAAIAAAAIAAgAAwAeAAIAAAAHAAgAAwAeAAIAAAAEAAgAAwAeAAIAAAADAAgAAwAeAAIAAAACAAgAAwAeAAIAAAABAAgAAwAeAAIAAAAAAAgAAwAdAAIAAAAAAAEAAwAdAAEAAAAAAAIAAwAdAAEAAAAAAAMAAwAdAAEAAAAAAAQAAwAdAAEAAAAAAAUAAwAdAAEAAAAAAAYAAwAdAAEAAAAAAAcAAwAdAAEAAAADAAYAAwAEAAAAAAD//wQAAwADAAAAAAD//wUAAwADAAAAAAD//wYAAwADAAAAAAD//wcAAwADAAAAAAD//wgAAwADAAAAAAD//wkAAwADAAAAAAABAAkAAwADAAAAAAACAAkAAwADAAAAAAADAAkAAwADAAAAAAAEAAkAAwADAAAAAAAFAAkAAwADAAAAAAAGAAkAAwADAAAAAAAHAAkAAwADAAAAAAAIAAkAAwADAAAAAAAJAAkAAwADAAAAAAAKAAkAAwADAAAAAAALAAkAAwADAAAAAAAMAAkAAwADAAAAAAANAAkAAwADAAAAAAAOAAkAAwADAAAAAAAPAAkAAwADAAAAAAAQAAkAAwADAAAAAAAQAAgAAwADAAAAAAAQAAcAAwADAAAAAAAQAAYAAwADAAAAAAAQAAUAAwADAAAAAAAQAAQAAwADAAAAAAAQAAMAAwADAAAAAAAQAAIAAwADAAAAAAAQAAEAAwADAAAAAAAQAAAAAwADAAAAAAAQAP//AwADAAAAAAAPAP//AwADAAAAAAAOAP//AwADAAAAAAANAP//AwADAAAAAAAMAP//AwADAAAAAAALAP//AwADAAAAAAAKAP//AwADAAAAAAAJAP//AwADAAAAAAAIAP//AwADAAAAAAAHAP//AwADAAAAAAAGAP//AwADAAAAAAAFAP//AwADAAAAAAAEAP//AwADAAAAAAADAP//AwADAAAAAAACAP//AwADAAAAAAD/////AwADAAAAAAABAP//AwADAAAAAAAAAP//AwADAAAAAAD//wAAAwADAAAAAAD//wEAAwADAAAAAAD//wIAAwADAAAAAAD//wMAAwADAAAAAAAEAAQAAwAEAAAAAAAFAAQAAwAEAAEAAAAFAAUAAwAEAAAAAAAGAAUAAwAAAAIAAAAHAAUAAwABAAIAAAAIAAUAAwABAAIAAAAJAAUAAwABAAIAAAAKAAUAAwACAAIAAAAKAAQAAwACAAEAAAAKAAMAAwACAAAAAAAKAAIAAwAEAAAAAAAJAAIAAwAEAAAAAAAIAAIAAwAEAAAAAAAHAAIAAwAEAAAAAAAHAAEAAwAEAAAAAAAGAAEAAwAEAAAAAAAFAAEAAwAEAAAAAAAEAAEAAwAEAAAAAAADAAEAAwAEAAAAAAADAAIAAwAEAAEAAAACAAIAAwAEAAIAAAAFAAcAAwAEAAEAAAAGAAcAAwAEAAAAAAAHAAcAAwAEAAAAAAAMAAUAAwAEAAIAAAANAAUAAwAEAAAAAAAOAAUAAwAEAAEAAAAIAAEAAwAEAAAAAAAJAAEAAwAEAAAAAAAKAAEAAwAEAAAAAAALAAEAAwAEAAEAAAAMAAEAAwAEAAAAAAANAAEAAwAEAAAAAAAOAAEAAwAEAAAAAAALAAIAAwAEAAAAAAAMAAIAAwAEAAAAAAANAAIAAwAEAAAAAAAOAAIAAwAEAAAAAAANAAMAAwAEAAAAAAAMAAMAAwAEAAIAAAALAAMAAwAEAAAAAAAOAAMAAwAEAAAAAAAOAAQAAwAEAAAAAAANAAQAAwAEAAAAAAAMAAQAAwAEAAIAAAALAAQAAwAEAAAAAAALAAUAAwAEAAIAAAAEAAYAAwAEAAAAAAAFAAYAAwAEAAAAAAAKAAYAAwAEAAAAAAALAAYAAwAEAAIAAAAMAAYAAwAEAAAAAAANAAYAAwAEAAAAAAAIAAcAAwAEAAAAAAAJAAcAAwAEAAAAAAAKAAcAAwAEAAIAAAALAAcAAwAEAAAAAAAMAAcAAwAEAAAAAAACAAcAAwAEAAAAAAABAAcAAwAEAAAAAAABAAYAAwAEAAAAAAABAAUAAwAEAAAAAAACAAUAAwAEAAAAAAADAAUAAwAEAAAAAAAEAAUAAwAEAAAAAAABAAQAAwAEAAEAAAABAAMAAwAEAAAAAAACAAMAAwAEAAAAAAACAAQAAwAEAAAAAAADAAQAAwAEAAAAAAADAAMAAwAEAAAAAAAEAAMAAwAEAAEAAAAFAAMAAwAEAAAAAAAEAAIAAwAEAAAAAAAFAAIAAwAEAAAAAAAGAAIAAwAEAAAAAAAGAAQAAwAAAAEAAAAHAAQAAwABAAEAAAAIAAQAAwABAAEAAAAHAAMAAwABAAAAAAAIAAMAAwABAAAAAAAJAAQAAwABAAEAAAABAAIAAwAEAAAAAAABAAEAAwAEAAAAAAACAAEAAwAEAAAAAAAPAAgAAwAfAAIAAAAGAAYAAwAEAAAAAAAHAAYAAwAEAAIAAAAIAAYAAwAEAAAAAAAJAAYAAwAEAAAAAAA=")
-tile_set = SubResource("TileSet_jjgbg")
+tile_map_data = PackedByteArray("AAAAAAAAAwAdAAAAAAABAAAAAwAeAAAAAAACAAYAAwAEAAAAAAADAAcAAwAEAAAAAAAEAAcAAwAEAAAAAAAFAAgAAwAeAAIAAAAGAAgAAwAeAAIAAAAMAAgAAwAeAAIAAAANAAgAAwAeAAIAAAANAAcAAwAEAAAAAAAOAAcAAwAEAAAAAAAOAAYAAwAEAAAAAAAGAAMAAwAEAAAAAAAJAAMAAwAEAAAAAAACAAAAAwAeAAAAAAADAAAAAwAeAAAAAAAEAAAAAwAeAAAAAAAFAAAAAwAeAAAAAAAGAAAAAwAeAAAAAAAHAAAAAwAeAAAAAAAIAAAAAwAeAAAAAAAJAAAAAwAeAAAAAAAKAAAAAwAeAAAAAAALAAAAAwAeAAAAAAAMAAAAAwAeAAAAAAANAAAAAwAeAAAAAAAOAAAAAwAeAAAAAAAPAAAAAwAfAAAAAAAPAAEAAwAfAAEAAAAPAAIAAwAfAAEAAAAPAAMAAwAfAAEAAAAPAAQAAwAfAAEAAAAPAAUAAwAfAAEAAAAPAAYAAwAfAAEAAAAPAAcAAwAfAAEAAAAOAAgAAwAeAAIAAAALAAgAAwAeAAIAAAAKAAgAAwAeAAIAAAAJAAgAAwAeAAIAAAAIAAgAAwAeAAIAAAAHAAgAAwAeAAIAAAAEAAgAAwAeAAIAAAADAAgAAwAeAAIAAAACAAgAAwAeAAIAAAABAAgAAwAeAAIAAAAAAAgAAwAdAAIAAAAAAAEAAwAdAAEAAAAAAAIAAwAdAAEAAAAAAAMAAwAdAAEAAAAAAAQAAwAdAAEAAAAAAAUAAwAdAAEAAAAAAAYAAwAdAAEAAAAAAAcAAwAdAAEAAAADAAYAAwAEAAAAAAD//wQAAwADAAAAAAD//wUAAwADAAAAAAD//wYAAwADAAAAAAD//wcAAwADAAAAAAD//wgAAwADAAAAAAD//wkAAwADAAAAAAABAAkAAwADAAAAAAACAAkAAwADAAAAAAADAAkAAwADAAAAAAAEAAkAAwADAAAAAAAFAAkAAwADAAAAAAAGAAkAAwADAAAAAAAHAAkAAwADAAAAAAAIAAkAAwADAAAAAAAJAAkAAwADAAAAAAAKAAkAAwADAAAAAAALAAkAAwADAAAAAAAMAAkAAwADAAAAAAANAAkAAwADAAAAAAAOAAkAAwADAAAAAAAPAAkAAwADAAAAAAAQAAkAAwADAAAAAAAQAAgAAwADAAAAAAAQAAcAAwADAAAAAAAQAAYAAwADAAAAAAAQAAUAAwADAAAAAAAQAAQAAwADAAAAAAAQAAMAAwADAAAAAAAQAAIAAwADAAAAAAAQAAEAAwADAAAAAAAQAAAAAwADAAAAAAAQAP//AwADAAAAAAAPAP//AwADAAAAAAAOAP//AwADAAAAAAANAP//AwADAAAAAAAMAP//AwADAAAAAAALAP//AwADAAAAAAAKAP//AwADAAAAAAAJAP//AwADAAAAAAAIAP//AwADAAAAAAAHAP//AwADAAAAAAAGAP//AwADAAAAAAAFAP//AwADAAAAAAAEAP//AwADAAAAAAADAP//AwADAAAAAAACAP//AwADAAAAAAD/////AwADAAAAAAABAP//AwADAAAAAAAAAP//AwADAAAAAAD//wAAAwADAAAAAAD//wEAAwADAAAAAAD//wIAAwADAAAAAAD//wMAAwADAAAAAAAEAAQAAwAEAAAAAAAFAAQAAwAEAAEAAAAFAAUAAwAEAAAAAAAGAAUAAwAEAAAAAAAHAAUAAwAEAAAAAAAIAAUAAwAEAAAAAAAJAAUAAwAEAAAAAAAKAAUAAwAEAAAAAAAKAAQAAwAEAAAAAAAKAAMAAwAEAAAAAAAKAAIAAwAEAAAAAAAJAAIAAwAEAAAAAAAIAAIAAwAEAAAAAAAHAAIAAwAEAAAAAAAHAAEAAwAEAAAAAAAGAAEAAwAEAAAAAAAFAAEAAwAEAAAAAAAEAAEAAwAEAAAAAAADAAEAAwAEAAAAAAADAAIAAwAEAAEAAAACAAIAAwAEAAAAAAAFAAcAAwAEAAAAAAAGAAcAAwAEAAAAAAAHAAcAAwAEAAAAAAAMAAUAAwAEAAIAAAANAAUAAwAEAAAAAAAOAAUAAwAEAAAAAAAIAAEAAwAEAAAAAAAJAAEAAwAEAAAAAAAKAAEAAwAEAAAAAAALAAEAAwAEAAEAAAAMAAEAAwAEAAAAAAANAAEAAwAEAAAAAAAOAAEAAwAEAAAAAAALAAIAAwAEAAAAAAAMAAIAAwAEAAAAAAANAAIAAwAEAAAAAAAOAAIAAwAEAAAAAAANAAMAAwAEAAAAAAAMAAMAAwAEAAIAAAALAAMAAwAEAAAAAAAOAAMAAwAEAAAAAAAOAAQAAwAEAAAAAAANAAQAAwAEAAAAAAAMAAQAAwAEAAIAAAALAAQAAwAEAAAAAAALAAUAAwAEAAIAAAAEAAYAAwAEAAAAAAAFAAYAAwAEAAAAAAAKAAYAAwAEAAAAAAALAAYAAwAEAAIAAAAMAAYAAwAEAAAAAAANAAYAAwAEAAAAAAAIAAcAAwAEAAAAAAAJAAcAAwAEAAAAAAAKAAcAAwAEAAAAAAALAAcAAwAEAAAAAAAMAAcAAwAEAAAAAAACAAcAAwAEAAAAAAABAAcAAwAEAAAAAAABAAYAAwAEAAAAAAABAAUAAwAEAAAAAAACAAUAAwAEAAAAAAADAAUAAwAEAAAAAAAEAAUAAwAEAAAAAAABAAQAAwAEAAEAAAABAAMAAwAEAAAAAAACAAMAAwAEAAAAAAACAAQAAwAEAAAAAAADAAQAAwAEAAAAAAADAAMAAwAEAAAAAAAEAAMAAwAEAAEAAAAFAAMAAwAEAAAAAAAEAAIAAwAEAAAAAAAFAAIAAwAEAAAAAAAGAAIAAwAEAAAAAAAGAAQAAwAEAAAAAAAHAAQAAwAEAAAAAAAIAAQAAwAEAAAAAAAHAAMAAwAEAAAAAAAIAAMAAwAEAAAAAAAJAAQAAwAEAAAAAAABAAIAAwAEAAAAAAABAAEAAwAEAAAAAAACAAEAAwAEAAAAAAAPAAgAAwAfAAIAAAAGAAYAAwAEAAAAAAAHAAYAAwAEAAAAAAAIAAYAAwAEAAAAAAAJAAYAAwAEAAAAAAA=")
+tile_set = SubResource("TileSet_x4qwa")
 
 [node name="GlobalHUD" type="CanvasLayer" parent="."]
 
@@ -154,8 +150,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_npi0p")
-NextLevelScene = ExtResource("3_81drk")
+script = ExtResource("2_x4qwa")
 metadata/_edit_lock_ = true
 
 [node name="CoinCounterIcon" type="TextureRect" parent="GlobalHUD/HUD"]
@@ -165,7 +160,7 @@ offset_top = 111.0
 offset_right = 2221.0
 offset_bottom = 1253.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_c1bph")
+texture = ExtResource("3_hgqo4")
 expand_mode = 2
 metadata/_edit_lock_ = true
 
@@ -176,7 +171,7 @@ offset_top = 233.0
 offset_right = 1037.0
 offset_bottom = 547.0
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 230
 text = "1"
 horizontal_alignment = 1
@@ -210,7 +205,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="GlobalHUD/HUD/UIYouWin/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("5_oqvmb")
+texture = ExtResource("5_txb6k")
 
 [node name="YouWinLabel" type="Label" parent="GlobalHUD/HUD/UIYouWin"]
 layout_mode = 2
@@ -219,7 +214,7 @@ offset_top = 1218.0
 offset_right = 5145.0
 offset_bottom = 1819.0
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 500
 text = "Well done"
 
@@ -229,7 +224,7 @@ offset_left = 3161.0
 offset_top = 2174.0
 offset_right = 4840.0
 offset_bottom = 2724.0
-texture = ExtResource("6_yq1sg")
+texture = ExtResource("6_5j8p4")
 
 [node name="NextLevelButton" type="Button" parent="GlobalHUD/HUD/UIYouWin"]
 layout_mode = 2
@@ -242,7 +237,7 @@ theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
 theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
 theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 210
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jkdf5")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wsu2k")
@@ -265,7 +260,7 @@ offset_top = 3027.0
 offset_right = 5360.0
 offset_bottom = 3328.0
 theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 180
 text = "You go you smarty bunny"
 horizontal_alignment = 1
@@ -289,7 +284,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="GlobalHUD/HUD/UIYouLoose/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("5_oqvmb")
+texture = ExtResource("5_txb6k")
 
 [node name="YouLooseLabel" type="Label" parent="GlobalHUD/HUD/UIYouLoose"]
 layout_mode = 0
@@ -298,7 +293,7 @@ offset_top = 1208.0
 offset_right = 5562.0
 offset_bottom = 1809.0
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 500
 text = "Game over :'("
 
@@ -308,7 +303,7 @@ offset_left = 3161.0
 offset_top = 2174.0
 offset_right = 4840.0
 offset_bottom = 2724.0
-texture = ExtResource("6_yq1sg")
+texture = ExtResource("6_5j8p4")
 
 [node name="RetryButton" type="Button" parent="GlobalHUD/HUD/UIYouLoose"]
 layout_mode = 0
@@ -321,7 +316,7 @@ theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
 theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
 theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 210
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jkdf5")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wsu2k")
@@ -345,7 +340,7 @@ offset_top = 3027.0
 offset_right = 5616.0
 offset_bottom = 3328.0
 theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 180
 text = "Hint: every move cost you one coin"
 horizontal_alignment = 1
@@ -369,7 +364,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="GlobalHUD/HUD/UIEndScreen/CenterContainer"]
 layout_mode = 2
-texture = ExtResource("5_oqvmb")
+texture = ExtResource("5_txb6k")
 
 [node name="YouWinLabel" type="Label" parent="GlobalHUD/HUD/UIEndScreen"]
 layout_mode = 2
@@ -378,7 +373,7 @@ offset_top = 1218.0
 offset_right = 5145.0
 offset_bottom = 1819.0
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 500
 text = "Well done"
 
@@ -388,7 +383,7 @@ offset_left = 3161.0
 offset_top = 1985.0
 offset_right = 4840.0
 offset_bottom = 2535.0
-texture = ExtResource("6_yq1sg")
+texture = ExtResource("6_5j8p4")
 
 [node name="BackToMenuButton" type="Button" parent="GlobalHUD/HUD/UIEndScreen"]
 layout_mode = 2
@@ -401,32 +396,30 @@ theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
 theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
 theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 210
-theme_override_styles/focus = SubResource("StyleBoxEmpty_emhs1")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_81drk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_npi0p")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c1bph")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f3x5n")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_oqvmb")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_yq1sg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3wepa")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mv3dn")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dto56")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ggbp6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhcw7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_x4qwa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgqo4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vyxhw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_txb6k")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5j8p4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tx6e3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_skkf5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ni3kn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_imhnd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_culxr")
 text = "Back to menu"
 flat = true
 
 [node name="BG_Button2" type="TextureRect" parent="GlobalHUD/HUD/UIEndScreen"]
-layout_mode = 0
 offset_left = 3161.0
 offset_top = 2630.0
 offset_right = 4840.0
 offset_bottom = 3180.0
-texture = ExtResource("6_yq1sg")
+texture = ExtResource("6_5j8p4")
 
 [node name="ExitButton" type="Button" parent="GlobalHUD/HUD/UIEndScreen"]
-layout_mode = 0
 offset_left = 3161.0
 offset_top = 2630.0
 offset_right = 4840.0
@@ -436,47 +429,37 @@ theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
 theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
 theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
 theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 210
-theme_override_styles/focus = SubResource("StyleBoxEmpty_emhs1")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_81drk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_npi0p")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c1bph")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f3x5n")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_oqvmb")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_yq1sg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_3wepa")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mv3dn")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dto56")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ggbp6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhcw7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_x4qwa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgqo4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vyxhw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_txb6k")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5j8p4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tx6e3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_skkf5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ni3kn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_imhnd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_culxr")
 text = "Exit
 "
 flat = true
 
 [node name="Label" type="Label" parent="GlobalHUD/HUD/UIEndScreen"]
-layout_mode = 0
 offset_left = 2094.0
 offset_top = 3316.0
 offset_right = 5927.0
 offset_bottom = 3617.0
 theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
-theme_override_fonts/font = ExtResource("4_f3x5n")
+theme_override_fonts/font = ExtResource("4_vyxhw")
 theme_override_font_sizes/font_size = 180
 text = "You finished all levels. Thanks for playing !"
 horizontal_alignment = 1
 
-[node name="Player" parent="." instance=ExtResource("7_3wepa")]
-position = Vector2(1500, 2000)
+[node name="Player" parent="." instance=ExtResource("7_tx6e3")]
+position = Vector2(2926, 1516)
 _coin = 3
 
-[node name="chest" parent="." instance=ExtResource("10_ggbp6")]
-position = Vector2(6000, 2000)
-
-[node name="Coin4" parent="." instance=ExtResource("9_emhs1")]
-position = Vector2(3000, 2000)
-
-[node name="Coin3" parent="." instance=ExtResource("11_f5ai4")]
-position = Vector2(4500, 1500)
-
-[node name="Coin2" parent="." instance=ExtResource("9_dto56")]
-position = Vector2(4500, 2500)
+[node name="chest" parent="." instance=ExtResource("8_skkf5")]
+position = Vector2(3967, 1538)

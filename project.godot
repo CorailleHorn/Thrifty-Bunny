@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 [autoload]
 
 GameEvents="*res://Src/Autoloads/GameEvents.cs"
+GlobalAudioStreamPlayer="*res://Scenes/Autoloads/audio_stream_player.tscn"
 
 [display]
 

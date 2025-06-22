@@ -43,7 +43,7 @@ metadata/_edit_lock_ = true
 position = Vector2(250, 250)
 sprite_frames = SubResource("SpriteFrames_tqkpo")
 animation = &"idle"
-frame_progress = 0.162346
+frame_progress = 0.256093
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(250, 250)

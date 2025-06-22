@@ -42,7 +42,8 @@ public partial class Player : CharacterBody2D
 	#region ONREADY
 	private GameEvents _gameEvents;
 	private AnimatedSprite2D _animatedSprite2D;
-
+	private AudioStreamPlayer _stepAudioStreamPlayer;
+	private AudioStreamPlayer _errorAudioStreamPlayer;
 	#endregion
 
 	#endregion
@@ -59,6 +60,8 @@ public partial class Player : CharacterBody2D
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
 			_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+			_stepAudioStreamPlayer = GetNode<AudioStreamPlayer>("StepAudioStreamPlayer");
+			_errorAudioStreamPlayer = GetNode<AudioStreamPlayer>("ErrorAudioStreamPlayer");
 			// Signal connections
 			// Engine (automatically freed)
 
@@ -132,11 +135,16 @@ public partial class Player : CharacterBody2D
 					_isLevelFinished = true;
 					_gameEvents.EmitSignal(GameEvents.SignalName.OpenChest);
 				}
+				else
+				{
+					_errorAudioStreamPlayer.Play();
+				}
 				// If got time : do a little anim with a tween
 			}
 			else
 			{
 				_animatedSprite2D.Play("move");
+				_stepAudioStreamPlayer.Play();
 				Coin -= 1;
 			}
 		}

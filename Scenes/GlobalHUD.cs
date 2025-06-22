@@ -24,9 +24,12 @@ public partial class GlobalHUD : Control
 	private Label _coinCounterLabel;
 	private Control _UIYouWin;
 	private Control _UIYouLoose;
+	private Control _UIEndScreen;
 	private ColorRect _blackVeil;
 	private Button _nextLevelButton;
 	private Button _retryButton;
+	private Button _backToMenuButton;
+	private Button _exitButton;
 	#endregion
 
 	#endregion
@@ -48,7 +51,9 @@ public partial class GlobalHUD : Control
 			_blackVeil = GetNode<ColorRect>("BlackVeil");
 			_nextLevelButton = GetNode<Button>("UIYouWin/NextLevelButton");
 			_retryButton = GetNode<Button>("UIYouLoose/RetryButton");
-
+			_UIEndScreen = GetNode<Control>("UIEndScreen");
+			_backToMenuButton = GetNode<Button>("UIEndScreen/BackToMenuButton");
+			_exitButton = GetNode<Button>("UIEndScreen/ExitButton");
 			// Signal connections
 			// Engine (automatically freed)
 
@@ -60,6 +65,8 @@ public partial class GlobalHUD : Control
 			// Children emitter (automatically freed))
 			_nextLevelButton.Pressed += OnNextLevelButtonPressed;
 			_retryButton.Pressed += OnRetryButtonPressed;
+			_backToMenuButton.Pressed += OnBackToMenuButtonPressed;
+			_exitButton.Pressed += OnExitButtonPressed;
 			// Logic
 		}
 		catch (Exception e)
@@ -101,8 +108,12 @@ public partial class GlobalHUD : Control
 	}
 	private void OnYouWin()
 	{
-		_UIYouWin.Visible = true;
+		if (NextLevelScene != null)
+			_UIYouWin.Visible = true;
+		else
+			_UIEndScreen.Visible = true;
 		ShowBlackVeil();
+
 	}
 
 	private void OnYouLoose()
@@ -118,6 +129,16 @@ public partial class GlobalHUD : Control
 	private void OnRetryButtonPressed()
 	{
 		GetTree().ReloadCurrentScene();
+	}
+
+	private void OnBackToMenuButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("res://Scenes/menu.tscn");
+	}
+	private void OnExitButtonPressed()
+	{
+		GetTree().AutoAcceptQuit = false;
+		GetTree().Quit();
 	}
 	#endregion
 
