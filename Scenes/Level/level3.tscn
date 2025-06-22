@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://q7k41ymhxuo3"]
+[gd_scene load_steps=8 format=4 uid="uid://q7k41ymhxuo3"]
 
 [ext_resource type="Texture2D" uid="uid://v8pbihrtm7wg" path="res://Assets/Sprites/Spreadsheet_minijam.png" id="1_be27v"]
 [ext_resource type="PackedScene" uid="uid://bu2hvilipx3v6" path="res://Scenes/global_hud.tscn" id="2_ll2vu"]
+[ext_resource type="PackedScene" uid="uid://bpjqtkc435l2b" path="res://Scenes/Level/level4.tscn" id="3_i4oit"]
 [ext_resource type="PackedScene" uid="uid://djpojq481yjb6" path="res://Scenes/Player/player.tscn" id="7_4u611"]
 [ext_resource type="PackedScene" uid="uid://chlwk42tjaox" path="res://Scenes/Chest/chest.tscn" id="8_3bxm0"]
 
@@ -95,8 +96,11 @@ tile_set = SubResource("TileSet_x4qwa")
 
 [node name="GlobalHUD" parent="." instance=ExtResource("2_ll2vu")]
 
+[node name="HUD" parent="GlobalHUD" index="0"]
+NextLevelScene = ExtResource("3_i4oit")
+
 [node name="Player" parent="." instance=ExtResource("7_4u611")]
-position = Vector2(2033, 1129)
+position = Vector2(2000, 1000)
 _coin = 18
 
 [node name="chest" parent="." instance=ExtResource("8_3bxm0")]
