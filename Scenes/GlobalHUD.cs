@@ -23,6 +23,8 @@ public partial class GlobalHUD : Control
 	private Control _UIYouWin;
 	private Control _UIYouLoose;
 	private ColorRect _blackVeil;
+	private Button _nextLevelButton;
+	private Button _retryButton;
 	#endregion
 
 	#endregion
@@ -42,6 +44,8 @@ public partial class GlobalHUD : Control
 			_UIYouWin = GetNode<Control>("UIYouWin");
 			_UIYouLoose = GetNode<Control>("UIYouLoose");
 			_blackVeil = GetNode<ColorRect>("BlackVeil");
+			_nextLevelButton = GetNode<Button>("UIYouWin/NextLevelButton");
+			_retryButton = GetNode<Button>("UIYouLoose/RetryButton");
 
 			// Signal connections
 			// Engine (automatically freed)
@@ -52,7 +56,8 @@ public partial class GlobalHUD : Control
 			_gameEvents.YouWin += OnYouWin;
 			_gameEvents.YouLoose += OnYouLoose;
 			// Children emitter (automatically freed))
-
+			_nextLevelButton.Pressed += OnNextLevelButtonPressed;
+			_retryButton.Pressed += OnRetryButtonPressed;
 			// Logic
 		}
 		catch (Exception e)
@@ -103,7 +108,15 @@ public partial class GlobalHUD : Control
 		_UIYouLoose.Visible = true;
 		ShowBlackVeil();
 	}
+	private void OnNextLevelButtonPressed()
+	{
 
+	}
+
+	private void OnRetryButtonPressed()
+	{
+		GetTree().ReloadCurrentScene();
+	}
 	#endregion
 
 	#region LOGIC

@@ -194,7 +194,7 @@ offset_right = 4840.0
 offset_bottom = 2724.0
 texture = ExtResource("7_fdnlq")
 
-[node name="Button" type="Button" parent="GlobalHUD/HUD/UIYouWin"]
+[node name="NextLevelButton" type="Button" parent="GlobalHUD/HUD/UIYouWin"]
 layout_mode = 2
 offset_left = 3161.0
 offset_top = 2174.0
@@ -271,7 +271,7 @@ offset_right = 4840.0
 offset_bottom = 2724.0
 texture = ExtResource("7_fdnlq")
 
-[node name="Button" type="Button" parent="GlobalHUD/HUD/UIYouLoose"]
+[node name="RetryButton" type="Button" parent="GlobalHUD/HUD/UIYouLoose"]
 offset_left = 3161.0
 offset_top = 2174.0
 offset_right = 4840.0
