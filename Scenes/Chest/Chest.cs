@@ -19,6 +19,7 @@ public partial class Chest : Node2D
 
 	#region ONREADY
 	private GameEvents _gameEvents;
+	private AnimatedSprite2D _animatedSprite2D;
 
 	#endregion
 
@@ -35,16 +36,19 @@ public partial class Chest : Node2D
 		{
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
+			_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
 			// Signal connections
 			// Engine (automatically freed)
 
 			// Customs (need to be freed manually)
 			// Local and external emitter (freed in _ExitTree())
-
+			_gameEvents.OpenChest += OnOpenChest;
 			// Children emitter (automatically freed))
-			//_area2D.BodyEntered += OnArea2DBodyEntered;
+			_animatedSprite2D.AnimationFinished += OnAnimatedSprite2DAnimationFinished;
+
 			// Logic
+			_animatedSprite2D.Play("idle");
 		}
 		catch (Exception e)
 		{
@@ -60,6 +64,7 @@ public partial class Chest : Node2D
 			// Call parent _ExitTree()
 			base._ExitTree();
 			// Custom local and external signals freeing
+			_gameEvents.OpenChest -= OnOpenChest;
 
 		}
 		catch (Exception e)
@@ -77,13 +82,18 @@ public partial class Chest : Node2D
 	#endregion
 
 	#region ON_SIGNALS
-	private void OnArea2DBodyEntered(Node2D body)
+	private void OnAnimatedSprite2DAnimationFinished()
 	{
-		if (body is Player player)
+		if (_animatedSprite2D.Animation == "open")
 		{
 			_gameEvents.EmitSignal(GameEvents.SignalName.YouWin);
 		}
 	}
+	private void OnOpenChest()
+	{
+		_animatedSprite2D.Play("open");
+	}
+
 
 	#endregion
 

@@ -41,6 +41,7 @@ public partial class Player : CharacterBody2D
 
 	#region ONREADY
 	private GameEvents _gameEvents;
+	private AnimatedSprite2D _animatedSprite2D;
 
 	#endregion
 
@@ -57,7 +58,7 @@ public partial class Player : CharacterBody2D
 		{
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
-
+			_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 			// Signal connections
 			// Engine (automatically freed)
 
@@ -65,9 +66,10 @@ public partial class Player : CharacterBody2D
 			// Local and external emitter (freed in _ExitTree())
 
 			// Children emitter (automatically freed))
-
+			_animatedSprite2D.AnimationFinished += OnAnimatedSprite2DAnimationFinished;
 			// Logic
 			_gameEvents.EmitSignal(GameEvents.SignalName.CoinCounterChanged, Coin);
+			_animatedSprite2D.Play("idle");
 		}
 		catch (Exception e)
 		{
@@ -128,12 +130,13 @@ public partial class Player : CharacterBody2D
 				if (result.GetCollider() is Chest)
 				{
 					_isLevelFinished = true;
-					_gameEvents.EmitSignal(GameEvents.SignalName.YouWin);
+					_gameEvents.EmitSignal(GameEvents.SignalName.OpenChest);
 				}
 				// If got time : do a little anim with a tween
 			}
 			else
 			{
+				_animatedSprite2D.Play("move");
 				Coin -= 1;
 			}
 		}
@@ -142,6 +145,13 @@ public partial class Player : CharacterBody2D
 	#endregion
 
 	#region ON_SIGNALS
+	private void OnAnimatedSprite2DAnimationFinished()
+	{
+		if (_animatedSprite2D.Animation == "move")
+		{
+			_animatedSprite2D.Play("idle");
+		}
+	}
 	#endregion
 
 	#region LOGIC

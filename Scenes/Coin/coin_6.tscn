@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfqqu1nvo812k"]
+
+[ext_resource type="PackedScene" uid="uid://6sxhjow7ns1u" path="res://Scenes/Coin/coin.tscn" id="1_0umia"]
+[ext_resource type="Texture2D" uid="uid://v8pbihrtm7wg" path="res://Assets/Sprites/Spreadsheet_minijam.png" id="2_lvadl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aypj7"]
+atlas = ExtResource("2_lvadl")
+region = Rect2(6000, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo2gx"]
+atlas = ExtResource("2_lvadl")
+region = Rect2(6500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m86cv"]
+atlas = ExtResource("2_lvadl")
+region = Rect2(7000, 1000, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ipex8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aypj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo2gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m86cv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Coin6" instance=ExtResource("1_0umia")]
+Value = 6
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ipex8")
+frame_progress = 0.0

@@ -21,7 +21,7 @@ public partial class Coin : Node2D
 
 	#region ONREADY
 	private Area2D _area2D;
-
+	private AnimatedSprite2D _animatedSprite2D;
 	#endregion
 
 	#endregion
@@ -37,6 +37,7 @@ public partial class Coin : Node2D
 		{
 			// On ready
 			_area2D = GetNode<Area2D>("Area2D");
+			_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 			// Signal connections
 			// Engine (automatically freed)
 
@@ -46,6 +47,7 @@ public partial class Coin : Node2D
 			// Children emitter (automatically freed))
 			_area2D.BodyEntered += OnArea2DBodyEntered;
 			// Logic
+			_animatedSprite2D.Play("idle");
 		}
 		catch (Exception e)
 		{
