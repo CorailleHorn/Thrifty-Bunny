@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mini-jam-187"
-run/main_scene="uid://bo5bs3m50uswp"
+run/main_scene="uid://kwb7nlki715u"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

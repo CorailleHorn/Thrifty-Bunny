@@ -12,6 +12,8 @@ public partial class GlobalHUD : Control
 	#endregion
 
 	#region FIELDS
+	[Export]
+	public PackedScene NextLevelScene;
 	#endregion
 
 	#region SIGNALS
@@ -110,7 +112,7 @@ public partial class GlobalHUD : Control
 	}
 	private void OnNextLevelButtonPressed()
 	{
-
+		GetTree().ChangeSceneToPacked(NextLevelScene);
 	}
 
 	private void OnRetryButtonPressed()
