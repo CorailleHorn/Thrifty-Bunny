@@ -18,7 +18,6 @@ public partial class Chest : Node2D
 	#endregion
 
 	#region ONREADY
-	private Area2D _area2D;
 	private GameEvents _gameEvents;
 
 	#endregion
@@ -36,7 +35,6 @@ public partial class Chest : Node2D
 		{
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
-			_area2D = GetNode<Area2D>("Area2D");
 
 			// Signal connections
 			// Engine (automatically freed)
@@ -45,7 +43,7 @@ public partial class Chest : Node2D
 			// Local and external emitter (freed in _ExitTree())
 
 			// Children emitter (automatically freed))
-			_area2D.BodyEntered += OnArea2DBodyEntered;
+			//_area2D.BodyEntered += OnArea2DBodyEntered;
 			// Logic
 		}
 		catch (Exception e)

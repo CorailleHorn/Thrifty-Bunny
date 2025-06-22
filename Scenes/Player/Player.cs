@@ -116,8 +116,19 @@ public partial class Player : CharacterBody2D
 		{
 			Vector2 direction = Position.DirectionTo(TargetPosition);
 			float distance = Position.DistanceTo(TargetPosition);
-			MoveAndCollide(direction * distance);
-			Coin -= 1;
+			var result = MoveAndCollide(direction * distance);
+			if (result != null)
+			{
+				if (result.GetCollider() is Chest)
+				{
+					_gameEvents.EmitSignal(GameEvents.SignalName.YouWin);
+				}
+				// If got time : do a little anim with a tween
+			}
+			else
+			{
+				Coin -= 1;
+			}
 		}
 	}
 
