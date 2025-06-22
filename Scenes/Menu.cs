@@ -85,7 +85,8 @@ public partial class Menu : Control
 	}
 	private void OnJamInfoButtonPressed()
 	{
-
+		GetTree().AutoAcceptQuit = false;
+		GetTree().Quit();
 	}
 	#endregion
 

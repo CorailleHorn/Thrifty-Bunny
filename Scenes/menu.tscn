@@ -134,7 +134,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_23t3j")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ph6h")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5ti5v")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1by5w")
-text = "Jam Info"
+text = "Exit"
 flat = true
 
 [node name="GoalTextureRect" type="TextureRect" parent="."]
