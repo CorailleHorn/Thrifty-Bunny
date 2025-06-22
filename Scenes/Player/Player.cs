@@ -24,6 +24,7 @@ public partial class Player : CharacterBody2D
 				if (_coin == 0)
 				{
 					// Do something
+					//_gameEvents.EmitSignal(GameEvents.SignalName.YouLoose);
 				}
 			}
 		}
@@ -32,7 +33,7 @@ public partial class Player : CharacterBody2D
 	#endregion
 
 	#region FIELD
-	private bool _isWon = false;
+	private bool _isLevelFinished = false;
 	#endregion
 
 	#region SIGNALS
@@ -62,7 +63,7 @@ public partial class Player : CharacterBody2D
 
 			// Customs (need to be freed manually)
 			// Local and external emitter (freed in _ExitTree())
-			_gameEvents.YouWin += OnYouWin;
+
 			// Children emitter (automatically freed))
 
 			// Logic
@@ -82,7 +83,6 @@ public partial class Player : CharacterBody2D
 			// Call parent _ExitTree()
 			base._ExitTree();
 			// Custom local and external signals freeing
-			_gameEvents.YouWin -= OnYouWin;
 		}
 		catch (Exception e)
 		{
@@ -98,7 +98,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (Coin == 0 || _isWon)
+		if (_isLevelFinished)
 		{
 			return; // Skip move input
 		}
@@ -116,11 +116,18 @@ public partial class Player : CharacterBody2D
 		{
 			Vector2 direction = Position.DirectionTo(TargetPosition);
 			float distance = Position.DistanceTo(TargetPosition);
+			if (Coin == 0 && MoveAndCollide(direction * distance, true) == null)
+			{
+				_isLevelFinished = true;
+				_gameEvents.EmitSignal(GameEvents.SignalName.YouLoose);
+				return;
+			}
 			var result = MoveAndCollide(direction * distance);
 			if (result != null)
 			{
 				if (result.GetCollider() is Chest)
 				{
+					_isLevelFinished = true;
 					_gameEvents.EmitSignal(GameEvents.SignalName.YouWin);
 				}
 				// If got time : do a little anim with a tween
@@ -135,7 +142,6 @@ public partial class Player : CharacterBody2D
 	#endregion
 
 	#region ON_SIGNALS
-	private void OnYouWin() => _isWon = true;
 	#endregion
 
 	#region LOGIC

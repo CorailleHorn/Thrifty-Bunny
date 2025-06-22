@@ -20,7 +20,8 @@ public partial class GlobalHUD : Control
 	#region ONREADY
 	private GameEvents _gameEvents;
 	private Label _coinCounterLabel;
-	private Control _UIFinal;
+	private Control _UIYouWin;
+	private Control _UIYouLoose;
 	private ColorRect _blackVeil;
 	#endregion
 
@@ -38,8 +39,9 @@ public partial class GlobalHUD : Control
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
 			_coinCounterLabel = GetNode<Label>("CoinCounterLabel");
-			_UIFinal = GetNode<Control>("UIFInal");
-			_blackVeil = GetNode<ColorRect>("UIFInal/BlackVeil");
+			_UIYouWin = GetNode<Control>("UIYouWin");
+			_UIYouLoose = GetNode<Control>("UIYouLoose");
+			_blackVeil = GetNode<ColorRect>("BlackVeil");
 
 			// Signal connections
 			// Engine (automatically freed)
@@ -48,6 +50,7 @@ public partial class GlobalHUD : Control
 			// Local and external emitter (freed in _ExitTree())
 			_gameEvents.CoinCounterChanged += OnCoinCounterChanged;
 			_gameEvents.YouWin += OnYouWin;
+			_gameEvents.YouLoose += OnYouLoose;
 			// Children emitter (automatically freed))
 
 			// Logic
@@ -68,6 +71,7 @@ public partial class GlobalHUD : Control
 			// Custom local and external signals freeing
 			_gameEvents.CoinCounterChanged -= OnCoinCounterChanged;
 			_gameEvents.YouWin -= OnYouWin;
+			_gameEvents.YouLoose -= OnYouLoose;
 		}
 		catch (Exception e)
 		{
@@ -90,14 +94,27 @@ public partial class GlobalHUD : Control
 	}
 	private void OnYouWin()
 	{
-		_UIFinal.Visible = true;
+		_UIYouWin.Visible = true;
+		ShowBlackVeil();
+	}
+
+	private void OnYouLoose()
+	{
+		_UIYouLoose.Visible = true;
+		ShowBlackVeil();
+	}
+
+	#endregion
+
+	#region LOGIC
+
+	private void ShowBlackVeil()
+	{
+		_blackVeil.Visible = true;
 		Tween fadeTween = CreateTween();
 		fadeTween.TweenProperty(_blackVeil, "color:a", 0.5, 0.2);
 		fadeTween.TweenCallback(Callable.From(() => GetTree().Paused = true));//.SetDelay(2.0f);
 	}
-	#endregion
-
-	#region LOGIC
 
 	#endregion
 

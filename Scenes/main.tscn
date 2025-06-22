@@ -72,16 +72,8 @@ theme_override_constants/shadow_outline_size = 50
 theme_override_font_sizes/font_size = 230
 text = "25"
 
-[node name="UIFInal" type="Control" parent="GlobalHUD/HUD"]
+[node name="BlackVeil" type="ColorRect" parent="GlobalHUD/HUD"]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BlackVeil" type="ColorRect" parent="GlobalHUD/HUD/UIFInal"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +82,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="CenterContainer" type="CenterContainer" parent="GlobalHUD/HUD/UIFInal"]
+[node name="UIYouWin" type="Control" parent="GlobalHUD/HUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,7 +91,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="YouWinLabel" type="Label" parent="GlobalHUD/HUD/UIFInal/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="GlobalHUD/HUD/UIYouWin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouWinLabel" type="Label" parent="GlobalHUD/HUD/UIYouWin/CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.85098, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -106,6 +107,32 @@ theme_override_constants/shadow_offset_y = 50
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 800
 text = "GG"
+
+[node name="UIYouLoose" type="Control" parent="GlobalHUD/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="GlobalHUD/HUD/UIYouLoose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouLooseLabel" type="Label" parent="GlobalHUD/HUD/UIYouLoose/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.382703, 0.35486, 0.80696, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 50
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 800
+text = "FF"
 
 [node name="Player" parent="." instance=ExtResource("3_8gbba")]
 position = Vector2(0, 2000)

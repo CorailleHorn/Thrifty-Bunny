@@ -9,6 +9,8 @@ public partial class GameEvents : Node
 	public delegate void CoinCounterChangedEventHandler(int count);
 	[Signal]
 	public delegate void YouWinEventHandler();
+	[Signal]
+	public delegate void YouLooseEventHandler();
 	#endregion
 	#endregion
 
