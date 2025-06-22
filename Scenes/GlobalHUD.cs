@@ -113,7 +113,7 @@ public partial class GlobalHUD : Control
 		_blackVeil.Visible = true;
 		Tween fadeTween = CreateTween();
 		fadeTween.TweenProperty(_blackVeil, "color:a", 0.5, 0.2);
-		fadeTween.TweenCallback(Callable.From(() => GetTree().Paused = true));//.SetDelay(2.0f);
+		//fadeTween.TweenCallback(Callable.From(() => GetTree().Paused = true));//.SetDelay(2.0f);
 	}
 
 	#endregion
