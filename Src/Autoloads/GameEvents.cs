@@ -10,6 +10,8 @@ public partial class GameEvents : Node
 	[Signal]
 	public delegate void PlayCoinSoundEventHandler();
 	[Signal]
+	public delegate void PlayClicSoundEventHandler();
+	[Signal]
 	public delegate void OpenChestEventHandler();
 	[Signal]
 	public delegate void YouWinEventHandler();

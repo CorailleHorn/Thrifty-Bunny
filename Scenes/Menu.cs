@@ -20,6 +20,7 @@ public partial class Menu : Control
 	#region ONREADY
 	private Button _playButton;
 	private Button _jamInfoButton;
+	private GameEvents _gameEvents;
 	#endregion
 
 	#endregion
@@ -34,6 +35,7 @@ public partial class Menu : Control
 		try
 		{
 			// On ready
+			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
 			_playButton = GetNode<Button>("PlayButton");
 			_jamInfoButton = GetNode<Button>("JamInfoButton");
 			// Signal connections
@@ -81,10 +83,12 @@ public partial class Menu : Control
 	#region ON_SIGNALS
 	private void OnPlayButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().ChangeSceneToFile("res://Scenes/Level/level1.tscn");
 	}
 	private void OnJamInfoButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().AutoAcceptQuit = false;
 		GetTree().Quit();
 	}

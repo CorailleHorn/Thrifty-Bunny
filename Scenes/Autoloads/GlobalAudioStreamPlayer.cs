@@ -20,6 +20,7 @@ public partial class GlobalAudioStreamPlayer : AudioStreamPlayer
 	#region ONREADY
 	private GameEvents _gameEvents;
 	private AudioStreamPlayer _coinAudioStreamPlayer;
+	private AudioStreamPlayer _clicAudioStreamPlayer;
 	#endregion
 
 	#endregion
@@ -36,12 +37,14 @@ public partial class GlobalAudioStreamPlayer : AudioStreamPlayer
 			// On ready
 			_gameEvents = GetNode<GameEvents>("/root/GameEvents");
 			_coinAudioStreamPlayer = GetNode<AudioStreamPlayer>("CoinAudioStreamPlayer");
+			_clicAudioStreamPlayer = GetNode<AudioStreamPlayer>("ClicAudioStreamPlayer");
 			// Signal connections
 			// Engine (automatically freed)
 
 			// Customs (need to be freed manually)
 			// Local and external emitter (freed in _ExitTree())
 			_gameEvents.PlayCoinSound += OnPlayCoinSound;
+			_gameEvents.PlayClicSound += OnPlayClicSound;
 			// Children emitter (automatically freed))
 
 			// Logic
@@ -62,8 +65,9 @@ public partial class GlobalAudioStreamPlayer : AudioStreamPlayer
 			base._ExitTree();
 			// Custom local and external signals freeing
 			_gameEvents.PlayCoinSound -= OnPlayCoinSound;
+			_gameEvents.PlayClicSound -= OnPlayClicSound;
 		}
-		catch(Exception e)
+		catch (Exception e)
 		{
 			GD.PushError($"Error while unloading GlobalAudioStreamPlayer : ", e);
 		}
@@ -79,6 +83,7 @@ public partial class GlobalAudioStreamPlayer : AudioStreamPlayer
 
 	#region ON_SIGNALS
 	private void OnPlayCoinSound() => _coinAudioStreamPlayer.Play();
+	private void OnPlayClicSound() => _clicAudioStreamPlayer.Play();
 	#endregion
 
 	#region LOGIC

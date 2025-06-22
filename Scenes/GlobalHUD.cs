@@ -30,6 +30,8 @@ public partial class GlobalHUD : Control
 	private Button _retryButton;
 	private Button _backToMenuButton;
 	private Button _exitButton;
+	private AudioStreamPlayer _victoryAudioStreamPlayer;
+	private AudioStreamPlayer _gameOverAudioStreamPlayer;
 	#endregion
 
 	#endregion
@@ -54,6 +56,8 @@ public partial class GlobalHUD : Control
 			_UIEndScreen = GetNode<Control>("UIEndScreen");
 			_backToMenuButton = GetNode<Button>("UIEndScreen/BackToMenuButton");
 			_exitButton = GetNode<Button>("UIEndScreen/ExitButton");
+			_victoryAudioStreamPlayer = GetNode<AudioStreamPlayer>("VictoryAudioStreamPlayer");
+			_gameOverAudioStreamPlayer = GetNode<AudioStreamPlayer>("GameOverAudioStreamPlayer");
 			// Signal connections
 			// Engine (automatically freed)
 
@@ -113,30 +117,35 @@ public partial class GlobalHUD : Control
 		else
 			_UIEndScreen.Visible = true;
 		ShowBlackVeil();
-
+		_victoryAudioStreamPlayer.Play();
 	}
 
 	private void OnYouLoose()
 	{
 		_UIYouLoose.Visible = true;
 		ShowBlackVeil();
+		_gameOverAudioStreamPlayer.Play();
 	}
 	private void OnNextLevelButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().ChangeSceneToPacked(NextLevelScene);
 	}
 
 	private void OnRetryButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().ReloadCurrentScene();
 	}
 
 	private void OnBackToMenuButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().ChangeSceneToFile("res://Scenes/menu.tscn");
 	}
 	private void OnExitButtonPressed()
 	{
+		_gameEvents.EmitSignal(GameEvents.SignalName.PlayClicSound);
 		GetTree().AutoAcceptQuit = false;
 		GetTree().Quit();
 	}

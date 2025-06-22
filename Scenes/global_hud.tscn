@@ -1,0 +1,380 @@
+[gd_scene load_steps=30 format=3 uid="uid://bu2hvilipx3v6"]
+
+[ext_resource type="Script" uid="uid://blsrs4njuics" path="res://Scenes/GlobalHUD.cs" id="1_eb6ry"]
+[ext_resource type="Texture2D" uid="uid://ci4jlai31nefh" path="res://Assets/UI/coin_counter.png" id="2_qv5iy"]
+[ext_resource type="FontFile" uid="uid://bd1egfqdso73" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_ycqyn"]
+[ext_resource type="Texture2D" uid="uid://canbu35eg51rm" path="res://Assets/UI/bg.png" id="4_0ebw8"]
+[ext_resource type="Texture2D" uid="uid://c76yhadai0jul" path="res://Assets/UI/button.png" id="5_t8h2d"]
+[ext_resource type="AudioStream" uid="uid://mutcayanh3dl" path="res://Assets/Sound/FX/victory.mp3" id="6_ycqyn"]
+[ext_resource type="AudioStream" uid="uid://dcihec3s75kjj" path="res://Assets/Sound/FX/gameover.mp3" id="7_0ebw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkdf5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wsu2k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3802"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1bgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ee4r6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fevyy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hibaj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdsj5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gt3je"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k12tt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fdnlq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhcw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4qwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgqo4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vyxhw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txb6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5j8p4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tx6e3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_skkf5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ni3kn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imhnd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_culxr"]
+
+[node name="GlobalHUD" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eb6ry")
+metadata/_edit_lock_ = true
+
+[node name="CoinCounterIcon" type="TextureRect" parent="HUD"]
+layout_mode = 2
+offset_left = 300.0
+offset_top = 111.0
+offset_right = 2221.0
+offset_bottom = 1253.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qv5iy")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="CoinCounterLabel" type="Label" parent="HUD"]
+layout_mode = 2
+offset_left = 774.0
+offset_top = 233.0
+offset_right = 1037.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 230
+text = "1"
+horizontal_alignment = 1
+
+[node name="BlackVeil" type="ColorRect" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="UIYouWin" type="Control" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/UIYouWin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/UIYouWin/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("4_0ebw8")
+
+[node name="YouWinLabel" type="Label" parent="HUD/UIYouWin"]
+layout_mode = 2
+offset_left = 2724.0
+offset_top = 1218.0
+offset_right = 5145.0
+offset_bottom = 1819.0
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 500
+text = "Well done"
+
+[node name="BG_Button" type="TextureRect" parent="HUD/UIYouWin"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 2174.0
+offset_right = 4840.0
+offset_bottom = 2724.0
+texture = ExtResource("5_t8h2d")
+
+[node name="NextLevelButton" type="Button" parent="HUD/UIYouWin"]
+layout_mode = 2
+offset_left = 3161.0
+offset_top = 2174.0
+offset_right = 4840.0
+offset_bottom = 2724.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jkdf5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wsu2k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b3802")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_h1bgf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ee4r6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fevyy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hibaj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_pdsj5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gt3je")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k12tt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fdnlq")
+text = "Next Level!!"
+flat = true
+
+[node name="Label" type="Label" parent="HUD/UIYouWin"]
+layout_mode = 0
+offset_left = 2661.0
+offset_top = 3027.0
+offset_right = 5360.0
+offset_bottom = 3328.0
+theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 180
+text = "You go you smarty bunny"
+horizontal_alignment = 1
+
+[node name="UIYouLoose" type="Control" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/UIYouLoose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/UIYouLoose/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("4_0ebw8")
+
+[node name="YouLooseLabel" type="Label" parent="HUD/UIYouLoose"]
+layout_mode = 0
+offset_left = 2360.0
+offset_top = 1208.0
+offset_right = 5562.0
+offset_bottom = 1809.0
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 500
+text = "Game over :'("
+
+[node name="BG_Button" type="TextureRect" parent="HUD/UIYouLoose"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 2174.0
+offset_right = 4840.0
+offset_bottom = 2724.0
+texture = ExtResource("5_t8h2d")
+
+[node name="RetryButton" type="Button" parent="HUD/UIYouLoose"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 2174.0
+offset_right = 4840.0
+offset_bottom = 2724.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jkdf5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wsu2k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_b3802")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_h1bgf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ee4r6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_fevyy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hibaj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_pdsj5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gt3je")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_k12tt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fdnlq")
+text = "Retry
+"
+flat = true
+
+[node name="Label" type="Label" parent="HUD/UIYouLoose"]
+layout_mode = 0
+offset_left = 2346.0
+offset_top = 3027.0
+offset_right = 5616.0
+offset_bottom = 3328.0
+theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 180
+text = "Hint: every move cost you one coin"
+horizontal_alignment = 1
+
+[node name="UIEndScreen" type="Control" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/UIEndScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/UIEndScreen/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("4_0ebw8")
+
+[node name="YouWinLabel" type="Label" parent="HUD/UIEndScreen"]
+layout_mode = 2
+offset_left = 2724.0
+offset_top = 1218.0
+offset_right = 5145.0
+offset_bottom = 1819.0
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 500
+text = "Well done"
+
+[node name="BG_Button" type="TextureRect" parent="HUD/UIEndScreen"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 1985.0
+offset_right = 4840.0
+offset_bottom = 2535.0
+texture = ExtResource("5_t8h2d")
+
+[node name="BackToMenuButton" type="Button" parent="HUD/UIEndScreen"]
+layout_mode = 2
+offset_left = 3161.0
+offset_top = 1985.0
+offset_right = 4840.0
+offset_bottom = 2535.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhcw7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_x4qwa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgqo4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vyxhw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_txb6k")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5j8p4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tx6e3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_skkf5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ni3kn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_imhnd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_culxr")
+text = "Back to menu"
+flat = true
+
+[node name="BG_Button2" type="TextureRect" parent="HUD/UIEndScreen"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 2630.0
+offset_right = 4840.0
+offset_bottom = 3180.0
+texture = ExtResource("5_t8h2d")
+
+[node name="ExitButton" type="Button" parent="HUD/UIEndScreen"]
+layout_mode = 0
+offset_left = 3161.0
+offset_top = 2630.0
+offset_right = 4840.0
+offset_bottom = 3180.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhcw7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_x4qwa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hgqo4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vyxhw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_txb6k")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5j8p4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tx6e3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_skkf5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ni3kn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_imhnd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_culxr")
+text = "Exit
+"
+flat = true
+
+[node name="Label" type="Label" parent="HUD/UIEndScreen"]
+layout_mode = 0
+offset_left = 2094.0
+offset_top = 3316.0
+offset_right = 5927.0
+offset_bottom = 3617.0
+theme_override_colors/font_color = Color(0.106155, 0.0748856, 0.214121, 1)
+theme_override_fonts/font = ExtResource("3_ycqyn")
+theme_override_font_sizes/font_size = 180
+text = "You finished all levels. Thanks for playing !"
+horizontal_alignment = 1
+
+[node name="VictoryAudioStreamPlayer" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource("6_ycqyn")
+volume_db = 15.0
+
+[node name="GameOverAudioStreamPlayer" type="AudioStreamPlayer" parent="HUD"]
+stream = ExtResource("7_0ebw8")
+volume_db = 16.0
