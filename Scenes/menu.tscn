@@ -1,0 +1,153 @@
+[gd_scene load_steps=18 format=3 uid="uid://b25ttdc0l6io3"]
+
+[ext_resource type="Script" uid="uid://dl4u2t3n18c0a" path="res://Scenes/Menu.cs" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://canbu35eg51rm" path="res://Assets/UI/bg.png" id="2_cayip"]
+[ext_resource type="FontFile" uid="uid://bd1egfqdso73" path="res://Assets/Fonts/DynaPuff-VariableFont_wdth,wght.ttf" id="3_158mb"]
+[ext_resource type="Texture2D" uid="uid://c76yhadai0jul" path="res://Assets/UI/button.png" id="4_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://dsk4h2d0sl2qo" path="res://Assets/UI/goal-image.png" id="5_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://tbpto0umeg7h" path="res://Assets/UI/tips-image.png" id="6_wbdvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbdvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3rjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6swd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qvly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfqti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8i7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23t3j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ph6h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ti5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1by5w"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.662745, 0.811765, 0.423529, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_cayip")
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 2198.0
+offset_top = 857.0
+offset_right = 5621.0
+offset_bottom = 1458.0
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_outline_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_constants/outline_size = 56
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 500
+text = "ThriftyBunny"
+
+[node name="BG_Button" type="TextureRect" parent="."]
+offset_left = 3047.0
+offset_top = 1599.0
+offset_right = 4726.0
+offset_bottom = 2149.0
+texture = ExtResource("4_wwsa2")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 3047.0
+offset_top = 1599.0
+offset_right = 4726.0
+offset_bottom = 2149.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsrd8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wbdvm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q3rjx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g8i7c")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_23t3j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ph6h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5ti5v")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1by5w")
+text = "Let's play !"
+flat = true
+
+[node name="BG_Button2" type="TextureRect" parent="."]
+offset_left = 3053.0
+offset_top = 2284.0
+offset_right = 4732.0
+offset_bottom = 2834.0
+texture = ExtResource("4_wwsa2")
+
+[node name="JamInfoButton" type="Button" parent="."]
+offset_left = 3053.0
+offset_top = 2284.0
+offset_right = 4732.0
+offset_bottom = 2834.0
+theme_override_colors/font_hover_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.333333, 0.694118, 1)
+theme_override_colors/font_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_colors/font_focus_color = Color(0.408974, 0.333576, 0.694395, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.270588, 0.596078, 1)
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 210
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jsrd8")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wbdvm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q3rjx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6swd7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7qvly")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rfqti")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g8i7c")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_23t3j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ph6h")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_5ti5v")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1by5w")
+text = "Jam Info"
+flat = true
+
+[node name="GoalTextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2231.0
+offset_top = 3108.0
+offset_right = 3501.0
+offset_bottom = 3568.0
+texture = ExtResource("5_jsrd8")
+
+[node name="TipsTextureRect" type="TextureRect" parent="."]
+offset_left = 4060.0
+offset_top = 3108.0
+offset_right = 5940.0
+offset_bottom = 3578.0
+texture = ExtResource("6_wbdvm")
